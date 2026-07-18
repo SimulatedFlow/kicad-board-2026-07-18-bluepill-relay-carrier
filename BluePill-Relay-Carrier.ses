@@ -1,0 +1,369 @@
+(session "BluePill-Relay-Carrier"
+  (base_design "BluePill-Relay-Carrier")
+  (placement
+    (resolution um 10)
+    (component Connector_PinSocket_2.54mm:PinSocket_1x20_P2.54mm_Vertical
+      (place U1 500000 -240000 front 270)
+      (place U2 500000 -468600 front 270)
+    )
+    (component "Relay_THT:Relay_SPDT_Hongfa_JQC-3FF_0XX-1Z"
+      (place RY1 560000 -100000 front 0)
+      (place RY2 560000 -440000 front 0)
+    )
+    (component Capacitor_THT:CP_Radial_D6.3mm_P2.50mm
+      (place C1 180000 -550000 front 90)
+    )
+    (component Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal
+      (place R4 760000 -510000 front 270)
+      (place R3 760000 -160000 front 270)
+    )
+    (component "TerminalBlock_Phoenix:TerminalBlock_Phoenix_PT-1,5-4-5.0-H_1x04_P5.00mm_Horizontal"
+      (place J4 260000 -620000 front 0)
+    )
+    (component Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm
+      (place C2 280000 -530000 front 0)
+    )
+    (component MountingHole:MountingHole_3.2mm
+      (place MH4 50000 -650000 front 0)
+      (place MH3 750000 -650000 front 0)
+      (place MH1 50000 -50000 front 0)
+      (place MH2 750000 -50000 front 0)
+    )
+    (component LED_THT:LED_D3.0mm
+      (place D5 760000 -490000 front 90)
+      (place D4 760000 -140000 front 90)
+    )
+    (component "TerminalBlock_Phoenix:TerminalBlock_Phoenix_PT-1,5-3-5.0-H_1x03_P5.00mm_Horizontal"
+      (place J3 570000 -620000 front 0)
+      (place J2 570000 -300000 front 0)
+    )
+    (component "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal"
+      (place D2 80000 -630000 front 0)
+      (place D3 180000 -60000 front 0)
+      (place D1 350000 -60000 front 0)
+    )
+    (component "Package_TO_SOT_THT:TO-92_Inline"
+      (place Q2 80000 -530000 front 0)
+      (place Q1 200000 -160000 front 0)
+    )
+    (component Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal::1
+      (place R1 300000 -160000 front 0)
+      (place R2 380000 -530000 front 0)
+    )
+    (component "TerminalBlock_Phoenix:TerminalBlock_Phoenix_PT-1,5-2-5.0-H_1x02_P5.00mm_Horizontal"
+      (place J1 70000 -120000 front 0)
+    )
+  )
+  (was_is
+  )
+  (routes 
+    (resolution um 10)
+    (parser
+      (host_cad "KiCad's Pcbnew")
+      (host_version 10.0.4)
+    )
+    (library_out 
+      (padstack "Via[0-3]_600:300_um"
+        (shape
+          (circle F.Cu 6000 0 0)
+        )
+        (shape
+          (circle In1.Cu 6000 0 0)
+        )
+        (shape
+          (circle In2.Cu 6000 0 0)
+        )
+        (shape
+          (circle B.Cu 6000 0 0)
+        )
+        (attach off)
+      )
+      (padstack "Via[0-3]_600:300_um"
+        (shape
+          (circle F.Cu 6000 0 0)
+        )
+        (shape
+          (circle In1.Cu 6000 0 0)
+        )
+        (shape
+          (circle In2.Cu 6000 0 0)
+        )
+        (shape
+          (circle B.Cu 6000 0 0)
+        )
+        (attach off)
+      )
+    )
+    (network_out 
+      (net PA0
+        (wire
+          (path B.Cu 4000
+            398400 -240000
+            318400 -160000
+            300000 -160000
+          )
+        )
+      )
+      (net PA1
+        (wire
+          (path F.Cu 4000
+            514101 -480140
+            520315 -480140
+          )
+        )
+        (wire
+          (path B.Cu 4000
+            514101 -480140
+            520315 -480140
+          )
+        )
+        (wire
+          (path F.Cu 4000
+            520315 -480140
+            514101 -480140
+          )
+        )
+        (wire
+          (path B.Cu 4000
+            520315 -480140
+            514101 -480140
+          )
+        )
+        (wire
+          (path F.Cu 4000
+            513587 -479626
+            511111 -482102
+          )
+        )
+        (wire
+          (path F.Cu 4000
+            373000 -240000
+            513587 -380587
+            513587 -479626
+          )
+        )
+        (wire
+          (path F.Cu 4000
+            520315 -480140
+            514101 -480140
+            513587 -479626
+          )
+        )
+        (via "Via[0-3]_600:300_um" 520315 -480140
+        )
+        (wire
+          (path B.Cu 4000
+            380000 -530000
+            393487 -543487
+            486802 -543487
+            520315 -509974
+            520315 -480140
+          )
+        )
+      )
+      (net RY1_COM
+        (wire
+          (path F.Cu 4000
+            570000 -300000
+            577811 -292189
+            577811 -197811
+            540000 -160000
+          )
+        )
+      )
+      (net RY1_NC
+        (wire
+          (path F.Cu 4000
+            670000 -300000
+            699938 -270062
+            699938 -117938
+            682000 -100000
+          )
+        )
+      )
+      (net RY1_NO
+        (wire
+          (path F.Cu 4000
+            620000 -300000
+            620000 -282000
+            682000 -220000
+          )
+        )
+      )
+      (net RY1_Drive
+        (wire
+          (path B.Cu 4000
+            560000 -220000
+            601600 -261600
+            760000 -261600
+          )
+        )
+        (wire
+          (path B.Cu 4000
+            221780 -130470
+            381130 -130470
+            451600 -60000
+          )
+        )
+        (via "Via[0-3]_600:300_um" 221780 -130470
+        )
+        (wire
+          (path F.Cu 4000
+            212700 -160000
+            212700 -139550
+            221780 -130470
+          )
+        )
+        (wire
+          (path F.Cu 4000
+            451600 -60000
+            451600 -111600
+            560000 -220000
+          )
+        )
+      )
+      (net LED2_K
+        (wire
+          (path F.Cu 4000
+            760000 -490000
+            760000 -510000
+          )
+        )
+      )
+      (net RY2_Drive
+        (wire
+          (path B.Cu 4000
+            560000 -579188
+            232412 -579188
+            181600 -630000
+          )
+        )
+        (wire
+          (path B.Cu 4000
+            560000 -579188
+            560000 -560000
+          )
+        )
+        (wire
+          (path B.Cu 4000
+            760000 -611600
+            727588 -579188
+            560000 -579188
+          )
+        )
+        (wire
+          (path F.Cu 4000
+            92700 -530000
+            92700 -542517
+          )
+        )
+        (wire
+          (path F.Cu 4000
+            92700 -542517
+            94117 -542517
+            181600 -630000
+          )
+        )
+      )
+      (net PB6
+        (wire
+          (path F.Cu 4000
+            360000 -620000
+            360000 -481000
+            347600 -468600
+          )
+        )
+      )
+      (net PB7
+        (wire
+          (path F.Cu 4000
+            410000 -620000
+            410000 -505600
+            373000 -468600
+          )
+        )
+      )
+      (net LED1_K
+        (wire
+          (path F.Cu 4000
+            760000 -160000
+            760000 -140000
+          )
+        )
+      )
+      (net RY2_COM
+        (wire
+          (path F.Cu 4000
+            540000 -500000
+            540000 -590000
+            570000 -620000
+          )
+        )
+      )
+      (net RY2_NO
+        (wire
+          (path F.Cu 4000
+            682000 -560000
+            688640 -566640
+            688640 -627065
+            677278 -638427
+            638427 -638427
+            620000 -620000
+          )
+        )
+      )
+      (net RY2_NC
+        (wire
+          (path F.Cu 4000
+            682000 -440000
+            663805 -458195
+            663805 -613805
+            670000 -620000
+          )
+        )
+      )
+      (net VCC_IN
+        (wire
+          (path B.Cu 4000
+            281600 -60000
+            257234 -84366
+            105634 -84366
+            70000 -120000
+          )
+        )
+      )
+      (net Q2B
+        (wire
+          (path B.Cu 4000
+            80000 -530000
+            80000 -517483
+          )
+        )
+        (wire
+          (path B.Cu 4000
+            80000 -517483
+            85589 -511894
+            463494 -511894
+            481600 -530000
+          )
+        )
+      )
+      (net Q1B
+        (wire
+          (path B.Cu 4000
+            200000 -160000
+            200000 -147483
+          )
+        )
+        (wire
+          (path B.Cu 4000
+            401600 -160000
+            388540 -146940
+            200543 -146940
+            200000 -147483
+          )
+        )
+      )
+    )
+  )
+)

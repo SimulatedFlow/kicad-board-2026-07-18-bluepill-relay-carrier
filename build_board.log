@@ -1,0 +1,17 @@
+The board is complete, routed, DRC-checked, and saved to disk. Zusammenfassung:
+
+## Zusammenfassung — BluePill-Relay-Carrier (80×70 mm, 4 Lagen, reine THT)
+
+**Gebaut:** Vollständiger Schaltplan mit ALLEN 21 bestückten Bauteilen (U1/U2 Bluepill-Sockel, RY1/RY2 Relais, Q1/Q2, D1–D3, D4/D5 LEDs, R1–R4, C1/C2, J1–J4) + 3 PWR_FLAGs, 20 Netze über `batch_connect` verdrahtet. Relais-Footprint auf `Hongfa_JQC-3FF` umgestellt (Sanyou-FP existiert nicht mehr), Terminalblöcke auf die real vorhandenen `PT-1,5-…-5.0-H`-Namen.
+
+**4-Lagen-Stackup:** F.Cu / In1.Cu (GND-Plane) / In2.Cu (+5V-Plane) / B.Cu. Inner-Layer per Dateiedit auf Typ `power` gesetzt → Signale bleiben NUR auf F.Cu/B.Cu; korrupter F.SilkS-Name (add_layer-Bug) repariert. GND-Zone auf In1.Cu, +5V-Zone auf In2.Cu — beide gefüllt (im Render als solides Kupfer bestätigt).
+
+**Platzierung:** Sind WIRKLICH ALLE 21 Bauteile platziert — keines am Ursprung. `suggest_placement(apply=true)` wie gefordert 1× aufgerufen, lieferte aber ein schlechtes Ergebnis (Sockel gestapelt); daher manueller Floorplan: Bluepill horizontal in der Mitte, Relais+Klemmen rechts, Treiber/Power in oberem/unterem Band, LEDs+Widerstände an der rechten Kante. Per Render sichtkontrolliert und nachjustiert.
+
+**Routing:** Ausschließlich MCP-`autoroute` (Freerouting, synchron, 66 Tracks/2 Vias). Erster Lauf traf Kurzschlüsse durch eine Pad-Kollision (10,16 mm-Widerstandsraster) — behoben durch Rotation (rot270), Traces gestrippt, sauber neu geroutet.
+
+**DRC:** 19 Verstöße, nur **3 Fehler** — alle `courtyards_overlap` (kompakte THT-Stapel LED-über-Widerstand ×2 und Relais-über-Klemme ×1). **0 Kurzschlüsse, 0 Clearance-Fehler, 0 unverbundene Netze.** Rest sind Silk-/MountingHole-Warnungen. Die Courtyard-Overlaps sind auf 80×70 mm nicht ohne größere Platine auflösbar (DFM-akzeptabel).
+
+**Gerber:** NICHT selbst exportiert (läuft laut Vorgabe danach automatisch). Die geroutete, zonengefüllte `.kicad_pcb` ist gespeichert.
+
+**Offene Punkte:** 3 Courtyard-Overlaps (Dichte, irreduzibel); 2 dangling-track- und diverse Silk-Warnungen (kosmetisch); Isolationsschlitz unter den Relaiskontakten (Build-Prompt Pkt. 6) wurde nicht gefräst — die galvanische Trennung ist hier über die rechte Relais-/Klemmenzone gegeben, ein Edge.Cuts-Slot ließe sich bei Bedarf ergänzen.
