@@ -1,0 +1,9 @@
+{
+  "board_name": "BluePill-Relay-Carrier",
+  "one_liner": "Robuste 2-Kanal-Relaisträgerplatine für die STM32 Bluepill mit Sensor-Schnittstelle und galvanischer Absicherung.",
+  "market_gap": "Existierende Trägerplatinen sind oft überladene Alleskönner oder billige Steckbrett-Kopien. Dieses Board bietet Bastlern eine saubere, extrem robuste und handlötbare Hutschienen-Plattform für zwei Relais ohne Kabelsalat.",
+  "confidence": "high",
+  "price_eur": 14.9,
+  "target_enclosure": "80x70mm DIN-Hutschienen-Gehäuse (z. B. CamdenBoss CNMB/3)",
+  "injection_notes": "keine"
+}
