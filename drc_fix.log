@@ -1,0 +1,12 @@
+Fertig. Zusammenfassung:
+
+**DRC-Reparatur BluePill-Relay-Carrier.kicad_pcb**
+
+- **Start:** 19 Verstöße, davon **3 Fehler** – alle `courtyards_overlap`: D4/R3, D5/R4 (LED über 330Ω-Widerstand, je 0.29 mm) und J3/RY2 (Klemmleiste unter Relais, 0.69 mm). Rest = Warnungen.
+- **Geänderte Bauteile (minimal, Routing erhalten):**
+  - **D4** LED nach oben 0.6 mm (y14→13.4), **D5** LED nach oben 0.6 mm (y49→48.4) – weg vom jeweiligen Widerstand.
+  - **RY2** Relais nach oben 0.9 mm (y44→43.1), um J3 freizugeben. (J3 wurde bewusst *nicht* verschoben: ein Abwärts-Move hätte einen RY2_NO/RY2_NC-Kurzschluss erzeugt und wäre nur mit Neu-Routing lösbar gewesen.)
+  - Alle Verschiebungen kleiner als der halbe Pad-Durchmesser → Track-Enden blieben in den Pads, **keine Leiterbahn neu gezogen**, keine anderen Bauteile bewegt.
+- **Zonen:** `refill_zones` neu gefüllt (2 Zonen), damit die GND/+5V-Plane um die neuen Pad-Positionen sauber ausschneidet (beseitigte die dadurch entstandenen Zonen-/Loch-Freiraum-Fehler).
+- **End-DRC:** **0 Fehler** (severity error). 14 verbliebene Warnungen (2 track_dangling – bereits im Original, 4 lib_footprint, 8 silk) – akzeptabel.
+- **.kicad_pcb gespeichert:** **Ja**, mit `save_project(force:true)`. Kein Gerber/PDF/Render exportiert.
